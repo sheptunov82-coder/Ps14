@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Самопроверка сердца: Псалом 14</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f6f2; 
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 35px;
+            font-size: 1.05em;
+        }
+        .question {
+            margin-bottom: 30px;
+            background: #fafbfc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #8e44ad;
+        }
+        .question p {
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .options label {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .options label:hover {
+            background: #f0f0f0;
+        }
+        input[type="radio"] {
+            margin-top: 5px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 30px;
+        }
+        button:hover { background-color: #732d91; }
+        
+        #result-section {
+            display: none;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #fcfbf7;
+            border-radius: 8px;
+            border: 1px solid #e0dcd3;
+        }
+        .grace-note {
+            background-color: #fdf2e9;
+            padding: 15px;
+            border-left: 4px solid #e67e22;
+            margin-top: 25px;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        .print-btn { background-color: #27ae60; }
+        .print-btn:hover { background-color: #219653; }
+        .hide-on-print { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="content-to-print">
+        <h1>Проверка сердца: Псалом 14</h1>
+        <p class="description">Этот опросник создан не для того, чтобы выставить вам оценку, а чтобы помочь Духу Святому подсветить те уголки сердца, которые нуждаются в Божьей благодати.</p>
+        
+        <form id="psalmTest">
+            
+            <div class="question" data-category="Искренность и отношения с близкими">
+                <p>1. Искренность в конфликте: Когда кто-то из близких (родственник, друг или супруг) делает мне справедливое замечание, а я устал после тяжелого дня, какова моя первая реакция?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="level1" required> Сразу перехожу в нападение, отвечая встречными упреками и припоминая чужие ошибки.</label>
+                    <label><input type="radio" name="q1" value="level2"> Оправдываю свою резкость усталостью или тем, что меня "спровоцировали".</label>
+                    <label><input type="radio" name="q1" value="level3"> Защищаюсь, раздражаюсь или просто молча ухожу, отказываясь признать вину.</label>
+                    <label><input type="radio" name="q1" value="level4"> Внутри закипаю, но стараюсь сдержаться, стиснув зубы, просто чтобы не было скандала.</label>
+                    <label><input type="radio" name="q1" value="grace"> С Божьей помощью нахожу силы выслушать и искренне признать неправоту без оправданий.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Честность перед обществом">
+                <p>2. Тайная честность: Если у меня есть возможность не заплатить налоги с подработки или проехать в транспорте без билета, зная, что это никто не проверит, как я к этому отнесусь?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="level1" required> Считаю это нормальным: государство или компании и так с нас достаточно берут.</label>
+                    <label><input type="radio" name="q2" value="level2"> Оправдываю себя тем, что "все так делают" или что у меня сейчас тяжелое финансовое положение.</label>
+                    <label><input type="radio" name="q2" value="level3"> Воспринимаю это как удачу и возможность сэкономить, стараясь заглушить голос совести.</label>
+                    <label><input type="radio" name="q2" value="level4"> Понимаю, что поступаю неправильно, борюсь с собой, но иногда поддаюсь искушению.</label>
+                    <label><input type="radio" name="q2" value="grace"> Плачу честно, потому что моя чистота перед Богом и порядочность важнее любой сэкономленной суммы.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Чистота слов">
+                <p>3. Сплетни в сообществе: В тесном кругу знакомых, где все друг друга знают, как я реагирую на обсуждение чужих падений?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="level1" required> Охотно слушаю, добавляю свои детали или пересылаю слух дальше.</label>
+                    <label><input type="radio" name="q3" value="level2"> Прикрываю сплетню "нуждой", говоря: "Давайте помолимся за этого человека, вы слышали, что он..."</label>
+                    <label><input type="radio" name="q3" value="level3"> Молча слушаю из любопытства, хоть внутри и понимаю, что это неправильно.</label>
+                    <label><input type="radio" name="q3" value="level4"> Мне неприятно, но не хватает смелости остановить разговор, чтобы не показаться «святошей».</label>
+                    <label><input type="radio" name="q3" value="grace"> Мягко, но твердо пресекаю сплетни, перевожу тему или физически выхожу из разговора.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Формирование ценностей">
+                <p>4. Влияние контента: Когда я погружаюсь в свои увлечения (играю в игры, смотрю фильмы), ловлю ли я себя на том, что оправдываю жестокость или грех на экране?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="level1" required> Я вообще не фильтрую контент через Евангелие, это просто развлечение.</label>
+                    <label><input type="radio" name="q4" value="level2"> Успокаиваю себя тем, что "это просто вымысел", закрывая глаза на откровенный грех в кадре.</label>
+                    <label><input type="radio" name="q4" value="level3"> Ловлю себя на том, что сопереживаю антигероям и внутренне оправдываю их поступки.</label>
+                    <label><input type="radio" name="q4" value="level4"> Периодически замечаю, что мирские стандарты притупляют духовную чувствительность, пытаюсь бороться с этим.</label>
+                    <label><input type="radio" name="q4" value="grace"> Стараюсь быть избирательным и выключаю то, что разрушает мир в сердце и порочит Божьи стандарты.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Отношение к верующим">
+                <p>5. Выбор окружения: Кого я на самом деле ценю больше в своей повседневной жизни?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="level1" required> Ищу связей только с полезными, статусными людьми, их мораль меня мало волнует.</label>
+                    <label><input type="radio" name="q5" value="level2"> В общине общаюсь со всеми, но в обычной жизни тянусь больше к мирским, неверующим компаниям.</label>
+                    <label><input type="radio" name="q5" value="level3"> Общаюсь с верующими больше из чувства долга, но глубокого родства не ощущаю.</label>
+                    <label><input type="radio" name="q5" value="level4"> Уважаю верующих, но часто стесняюсь их простоты перед своими светскими коллегами или друзьями.</label>
+                    <label><input type="radio" name="q5" value="grace"> Искренне ценю общение с простыми, богобоязненными людьми больше любого статуса.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Верность слову">
+                <p>6. Исполнение обещаний: Если я пообещал помочь кому-то, но внезапно появилось время на любимое хобби или отдых, что я выберу?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="level1" required> Без колебаний отменю обещание ради отдыха — мои интересы сейчас важнее.</label>
+                    <label><input type="radio" name="q6" value="level2"> Найду благовидный предлог (притворюсь сильно занятым), чтобы отменить обещание, не испортив репутацию.</label>
+                    <label><input type="radio" name="q6" value="level3"> Постараюсь переложить эту ответственность на кого-то другого, чтобы освободить себе время.</label>
+                    <label><input type="radio" name="q6" value="level4"> Исполню обещанное, но буду внутренне раздражаться, роптать и жалеть о потерянном времени.</label>
+                    <label><input type="radio" name="q6" value="grace"> Сдержу слово с миром в сердце, понимая, что верность в малом угодна Богу.</label>
+                </div>
+            </div>
+
+            <div class="question" data-category="Отношение к деньгам">
+                <p>7. Финансовая честность: Если на кассе ошиблись в мою пользу, какова моя реакция?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="level1" required> Обрадуюсь «халяве» и быстро уйду, считая, что это проблемы кассира.</label>
+                    <label><input type="radio" name="q7" value="level2"> Подумаю: «Сам Бог послал благословение!» и успокою этим свою совесть.</label>
+                    <label><input type="radio" name="q7" value="level3"> Решу, что пожертвую эту небольшую разницу на доброе дело, оправдывая тем самым нечестность.</label>
+                    <label><input type="radio" name="q7" value="level4"> Совесть будет мучить, но из-за лени, спешки или стеснения я не вернусь исправить ошибку.</label>
+                    <label><input type="radio" name="q7" value="grace"> Сразу укажу на ошибку и верну чужое, не задумываясь.</label>
+                </div>
+            </div>
+
+            <button type="button" class="hide-on-print" id="submitBtn" onclick="calculateResult()">Завершить размышление</button>
+        </form>
+
+        <div id="result-section">
+            <h2 style="color: #2c3e50;">Темы для молитвы на эту неделю:</h2>
+            <p>Исходя из ваших честных ответов, обратите особое внимание на следующие сферы вашей жизни:</p>
+            <ul id="prayer-points" style="line-height: 1.8; font-weight: 500;"></ul>
+            
+            <div class="grace-note">
+                <strong>Памятка о Благодати:</strong> Псалом 14 рисует портрет человека с абсолютно чистым сердцем. В полной мере этим Человеком был только Иисус Христос. Ваши провалы в этом тесте — это не повод для отчаяния или самобичевания. Это повод прийти к кресту, поблагодарить Спасителя за то, что Его праведность вменяется вам, и попросить Духа Святого шаг за шагом преображать ваш характер.
+            </div>
+        </div>
+        
+        <button type="button" class="print-btn hide-on-print" id="pdfBtn" style="display: none;" onclick="generatePDF()">Сохранить памятку в PDF</button>
+    </div>
+
+    <script>
+        function calculateResult() {
+            const form = document.getElementById('psalmTest');
+            if (!form.checkValidity()) {
+                alert("Пожалуйста, ответьте на все вопросы, чтобы картина была полной.");
+                return;
+            }
+
+            const questions = document.querySelectorAll('.question');
+            let areasForPrayer = [];
+
+            // Если выбран любой вариант, кроме "grace", сфера добавляется в список для молитвы
+            questions.forEach((q) => {
+                const radios = q.querySelectorAll('input[type="radio"]');
+                let selectedValue = "";
+                radios.forEach(r => { if(r.checked) selectedValue = r.value; });
+
+                if (selectedValue !== "grace") {
+                    const category = q.getAttribute('data-category');
+                    if (!areasForPrayer.includes(category)) {
+                        areasForPrayer.push(category);
+                    }
+                }
+            });
+
+            const ul = document.getElementById('prayer-points');
+            ul.innerHTML = "";
+
+            if (areasForPrayer.length === 0) {
+                ul.innerHTML = "<li>Слава Богу! Похоже, в исследованных сферах ваше сердце сейчас в правильном положении перед Господом. Продолжайте бодрствовать.</li>";
+            } else {
+                const limit = Math.min(areasForPrayer.length, 4);
+                for (let i = 0; i < limit; i++) {
+                    let li = document.createElement('li');
+                    li.innerText = areasForPrayer[i];
+                    ul.appendChild(li);
+                }
+                if (areasForPrayer.length > 4) {
+                    let li = document.createElement('li');
+                    li.innerText = "...и просите Бога открыть, где еще скрыт компромисс.";
+                    ul.appendChild(li);
+                }
+            }
+
+            document.getElementById('result-section').style.display = 'block';
+            document.getElementById('pdfBtn').style.display = 'block';
+            document.getElementById('submitBtn').style.display = 'none';
+            
+            form.querySelectorAll('input').forEach(input => input.disabled = true);
+        }
+
+        function generatePDF() {
+            document.getElementById('pdfBtn').style.display = 'none';
+            const element = document.getElementById('content-to-print');
+            
+            const opt = {
+                margin:       12,
+                filename:     'Молитвенная_памятка_Псалом_14.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, scrollY: 0 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                document.getElementById('pdfBtn').style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
